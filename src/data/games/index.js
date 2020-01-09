@@ -55,6 +55,8 @@ import game_FourthAge from "./FourthAge";
 import game_Harzbahn from "./Harzbahn";
 import game_Powerrails from "./Powerrails";
 
+import game_GermanRailways from "./GermanRailways";
+
 // These games will be available in the docker image and on local versions of
 // the site. The name in the string (on the left) needs to be identical to the
 // file name (without the .json) in order for command line printing to work.
@@ -114,7 +116,9 @@ let all_games = {
   FourthAge: game_FourthAge,
   Harzbahn: game_Harzbahn,
   Powerrails: game_Powerrails,
-  "18Test": game_18Test
+  "18Test": game_18Test,
+
+  GermanRailways: game_GermanRailways
 };
 
 // These games will be available on the public version of the site. Please keep
