@@ -7,8 +7,8 @@
   },
   "pagination": "equal",
   "paper": {
-    "width": 850,
-    "height": 1100,
+    "width": 826.77165354,
+    "height": 1169.291338578,
     "margins": 25
   },
   "currency": {
@@ -64,7 +64,7 @@
     "images": false
   },
   "tiles": {
-    "layout": "die",
+    "layout": "individual",
     "width": 150,
     "mapWidth": 150,
     "gaps": true
