@@ -55,7 +55,6 @@ import game_FourthAge from "./FourthAge";
 import game_Harzbahn from "./Harzbahn";
 import game_Powerrails from "./Powerrails";
 
-import game_GermanRailways from "./GermanRailways";
 import game_1836jr_mixed from "./1836jr-mixed";
 
 // These games will be available in the docker image and on local versions of
@@ -119,7 +118,6 @@ let all_games = {
   Powerrails: game_Powerrails,
   "18Test": game_18Test,
 
-  GermanRailways: game_GermanRailways,
   "1836jr-mixed": game_1836jr_mixed
 };
 
