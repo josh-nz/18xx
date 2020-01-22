@@ -14,7 +14,8 @@
     "rules": "https://boardgamegeek.com/boardgameexpansion/173574/1836jr/files"
   },
   "tokens": [
-    "Round"
+    "Round",
+    "+20"
   ],
   "ipo": true,
   "bank": 6000,
@@ -72,59 +73,69 @@
       "name": "Chemins de Fer de L'Etat Belge",
       "abbrev": "B",
       "color": "black",
-      "tokens": "four"
+      "tokens": "four",
+      "variant": "1830"
     },
     {
       "name": "Grande Compagnie du Luxembourg",
       "abbrev": "GCL",
       "color": "green",
-      "tokens": "four"
+      "tokens": "four",
+      "variant": "1830"
     },
     {
       "name": "Chemin de Fer du Nord",
       "abbrev": "Nord",
       "color": "blue",
-      "tokens": "three"
+      "tokens": "three",
+      "variant": "1830"
     },
     {
       "name": "Noord-Brabantsch-Duitsche Spoorweg-Maatschappij",
       "abbrev": "NBDS",
       "color": "yellow",
-      "tokens": "three"
+      "tokens": "three",
+      "variant": "1830"
     },
     {
       "name": "Hollandsche IJzeren Spoorweg Maatschappij",
       "abbrev": "HSM",
       "color": "orange",
-      "tokens": "two"
+      "tokens": "two",
+      "variant": "1830"
     },
     {
       "name": "Noord-Friesche Locaal",
       "abbrev": "NFL",
       "color": "lime",
-      "tokens": "two"
+      "tokens": "two",
+      "variant": "1830"
     },
     {
       "name": "Maatschappij tot Exploitie van de Staats-Spoorwegen",
       "abbrev": "SS",
       "color": "red",
       "tokens": "four",
+      "variant": "1856",
       "shares": [
         {
           "quantity": 1,
           "label": "President's Certificate",
           "percent": "20/10",
-          "shares": 2
+          "shares": 2,
+          "variant": "1856"
         },
         {
           "quantity": 8,
           "percent": "10/5",
-          "shares": 1
+          "shares": 1,
+          "variant": "1856"
         },
         {
           "quantity": 10,
           "percent": 5,
-          "shares": 1
+          "shares": 1,
+          "variant": "1856"
         }
       ]
     }
@@ -135,7 +146,7 @@
       "quantity": 5,
       "price": 80,
       "color": "yellow",
-      "description": "1830",
+      "variant": "1830",
       "info": [
         {
           "color": "green",
@@ -148,7 +159,7 @@
       "quantity": 4,
       "price": 180,
       "color": "green",
-      "description": "1830",
+      "variant": "1830",
       "info": [
         {
           "color": "brown",
@@ -161,7 +172,7 @@
       "quantity": 3,
       "price": 300,
       "color": "green",
-      "description": "1830",
+      "variant": "1830",
       "info": [
         {
           "color": "brown",
@@ -174,7 +185,7 @@
       "quantity": 2,
       "price": 450,
       "color": "brown",
-      "description": "1830",
+      "variant": "1830",
       "info": [
         {
           "color": "yellow",
@@ -187,7 +198,7 @@
       "quantity": 2,
       "price": 630,
       "color": "brown",
-      "description": "1830",
+      "variant": "1830",
       "info": [
         {
           "color": "yellow",
@@ -200,7 +211,8 @@
       "quantity": 5,
       "price": 1100,
       "color": "brown",
-      "description": "Cost F800 when trading in a 4T, 5T, or 6T 1830",
+      "description": "Cost F800 when trading in a 4T, 5T, or 6T",
+      "variant": "1830",
       "info": [
         {
           "color": "yellow",
@@ -214,7 +226,7 @@
       "quantity": 5,
       "price": 100,
       "color": "yellow",
-      "description": "1856",
+      "variant": "1856",
       "info": [
         {
           "color": "green",
@@ -227,7 +239,7 @@
       "quantity": 4,
       "price": 225,
       "color": "green",
-      "description": "1856",
+      "variant": "1856",
       "info": [
         {
           "color": "brown",
@@ -240,7 +252,7 @@
       "quantity": 3,
       "price": 350,
       "color": "green",
-      "description": "1856",
+      "variant": "1856",
       "info": [
         {
           "color": "brown",
@@ -253,7 +265,7 @@
       "quantity": 2,
       "price": 550,
       "color": "brown",
-      "description": "1856",
+      "variant": "1856",
       "info": [
         {
           "color": "yellow",
@@ -266,7 +278,7 @@
       "quantity": 2,
       "price": 700,
       "color": "brown",
-      "description": "1856",
+      "variant": "1856",
       "info": [
         {
           "color": "yellow",
@@ -279,7 +291,8 @@
       "quantity": 5,
       "price": 1000,
       "color": "brown",
-      "description": "Cost F650 when trading in a 4T, 5T, or 6T 1856",
+      "description": "Cost F650 when trading in a 4T, 5T, or 6T",
+      "variant": "1856",
       "info": [
         {
           "color": "yellow",
@@ -291,59 +304,72 @@
   "privates": [
     {
       "name": "Amsterdam Canal Company",
-      "players": "ACC",
+      "id": "ACC",
       "price": 20,
       "revenue": 5,
       "description": "No special ability. Blocks hex D6 while owned by player."
     },
     {
       "name": "Enkhuizen-Stavoren Ferry",
-      "players": "E-SF",
+      "id": "E-SF",
       "price": 40,
       "revenue": 10,
+      "hex": "B8",
       "description": "Owning corporation may place a free tile on the E-SF hex B8 (the IJsselmeer Causeway) free of cost, in addition to its own tile placement. Blocks hex B8 while owned by player."
     },
     {
       "name": "Charbonnages du Hainaut",
-      "players": "CdH, 1830",
+      "id": "CdH",
       "price": 70,
       "revenue": 15,
-      "description": "Owning corporation may place a tile and station token in the CdH hex J8 for only the F60 cost of the mountain. The track is not required to be connected to existing track of this corporation (or any corporation), and can be used as a teleport. This counts as the corporation's track lay for that turn. Blocks hex J8 while owned by player."
+      "hex": "J8",
+      "description": "Owning corporation may place a tile and station token in the CdH hex J8 for only the F60 cost of the mountain. The track is not required to be connected to existing track of this corporation (or any corporation), and can be used as a teleport. This counts as the corporation's track lay for that turn. Blocks hex J8 while owned by player.",
+      "variant": "1830"
     },
     {
       "name": "Grand Central Belge",
-      "players": "GCB, 1830",
+      "id": "GCB",
       "price": 110,
       "revenue": 20,
-      "description": "Owning player may exchange the CGB for a 10% certificate of the Chemins de Fer de L’Etat Belge (B) from the bank or the bank pool, subject to normal certificate limits. This closes the private company. The exchange may be made a) in a stock round, during the player’s turn or between the turns of other players, or b) in an operating round, between the turns of corporations. Blocks hexes G7, G9, & H10 while owned by player."
+      "company": "B",
+      "description": "Owning player may exchange the GCB for a 10% certificate of the Chemins de Fer de L’Etat Belge (B) from the bank or the bank pool, subject to normal certificate limits. This closes the private company. The exchange may be made a) in a stock round, during the player’s turn or between the turns of other players, or b) in an operating round, between the turns of corporations. Blocks hexes G7, G9, & H10 while owned by player.",
+      "variant": "1830"
     },
     {
       "name": "Chemins de Fer Luxembourgeois",
-      "players": "CFL, 1830",
+      "id": "CFL",
       "price": 160,
       "revenue": 25,
-      "description": "Upon purchase, the owning player receives a 10% certificate of the Grande Compagnie du Luxembourg (GCL). This certificate may only be sold once the GCL President’s Certificate has been purchased and a par price set, subject to standard rules. Blocks hexes K11 & J12 while owned by player."
+      "company": "GCL",
+      "description": "Upon purchase, the owning player receives a 10% certificate of the Grande Compagnie du Luxembourg (GCL). This certificate may only be sold once the GCL President’s Certificate has been purchased and a par price set, subject to standard rules. Blocks hexes K11 & J12 while owned by player.",
+      "variant": "1830"
     },
     {
       "name": "Chemin de Fer de Lille à Valenciennes",
-      "players": "CFLV, 1830",
+      "id": "CFLV",
       "price": 220,
       "revenue": 30,
-      "description": "Upon purchase, the owning player receives the President’s Certificate of the Chemin de Fer du Nord (Nord) and must immediately set the par price. This private company may not be bought by a corporation, and closes when the Nord buys its first train. Blocks hexes I3 & J4 while owned by player."
+      "company": "Nord",
+      "description": "Upon purchase, the owning player receives the President’s Certificate of the Chemin de Fer du Nord (Nord) and must immediately set the par price. This private company may not be bought by a corporation, and closes when the Nord buys its first train. Blocks hexes I3 & J4 while owned by player.",
+      "variant": "1830"
     },
     {
       "name": "Charbonnages du Hainaut",
-      "players": "CdH, 1856",
+      "id": "CdH",
       "price": 50,
       "revenue": 10,
-      "description": "Owning corporation may place a tile and station token in the CdH hex J8 for only the F60 cost of the mountain. Blocks hex J8 while owned by player."
+      "hex": "J8",
+      "description": "Owning corporation may place a tile and station token in the CdH hex J8 for only the F60 cost of the mountain. Blocks hex J8 while owned by player.",
+      "variant": "1856"
     },
     {
       "name": "Régie des Postes",
-      "players": "RdP, 1856",
+      "id": "RdP",
       "price": 70,
       "revenue": 15,
-      "description": "Owning corporation may place the +20 token on any city or town. Once placed, the token cannot be moved. The value of that location is increased by F20 for each and every time that corporation’s trains visit it."
+      "token": { "label": "+20" },
+      "description": "Owning corporation may place the +20 token on any city or town. Once placed, the token cannot be moved. The value of that location is increased by F20 for each and every time that corporation’s trains visit it.",
+      "variant": "1856"
     }
   ],
   "phases": [
@@ -392,16 +418,17 @@
   ],
   "pools": [
     {
-      "name": "Market",
+      "name": "1836jr-1830 Bank Pool",
+      "height": "5in",
       "notes": [
         {
           "color": "orange",
-          "note": "Shares in the market pay dividends to the corporation"
+          "note": "Shares in the bank pool pay dividends to the corporation"
         },
         {
           "color": "brown",
           "icon": "exclamation",
-          "note": "No more than 50% of a corporation's shares may be in the market at any time"
+          "note": "No more than 50% of a corporation's shares may be in the bank pool at any time"
         },
         {
           "color": "red",
@@ -892,48 +919,61 @@
   },
   "tiles": {
     "2": 1,
-    "3": 2,
-    "4": 2,
-    "7": 4,
-    "8": 8,
-    "9": 7,
-    "14": 3,
-    "15": 2,
+    "3": 2, "3-56": 1,
+    "4": 2, "4-56": 1,
+            "5-56": 2,
+            "6-56": 2,
+    "7": 4, "7-56": 3,
+    "8": 8, "8-56": 5,
+    "9": 7, "9-56": 6,
+    "56": 1,
+    "57": 4,
+    "58": 2, "58-56": 1,
+
+    "14": 3, "14-56": 1,
+    "15": 2, "15-56": 2,
     "16": 1,
+             "17-56": 1,
     "18": 1,
     "19": 1,
     "20": 1,
-    "23": 3,
-    "24": 3,
+    "23": 3, "23-56": 1,
+    "24": 3, "24-56": 1,
     "25": 1,
     "26": 1,
     "27": 1,
     "28": 1,
     "29": 1,
+    "53-30": 2,
+    "54/120": 1,
+    "59": 2,
+             "121-56B": 1,
+             "121-56L": 1,
+
     "39": 1,
     "40": 1,
-    "41": 2,
-    "42": 2,
+    "41": 2, "41-56": 1,
+    "42": 2, "42-56": 1,
     "43": 2,
     "44": 1,
     "45": 2,
     "46": 2,
-    "47": 1,
-    "53": 2,
-    "54": 1,
-    "56": 1,
-    "57": 4,
-    "58": 2,
-    "59": 2,
-    "61": 2,
-    "62": 1,
-    "63": 3,
+    "47": 1, "47-56": 1,
+    "61-30": 2,
+    "62/122": 1,
+    "63": 3, "63-56": 1,
     "64": 1,
     "65": 1,
     "66": 1,
     "67": 1,
     "68": 1,
-    "70": 1
+    "70": 1,
+             "125-56": 4,
+             "126-56": 1,
+             "127-56": 1,
+
+             "123-56": 1,
+             "124-56": 1
   },
   "map": {
     "hexes": [
@@ -1091,7 +1131,7 @@
         ],
         "labels": [
           {
-            "label": "T",
+            "label": "A",
             "angle": 120,
             "percent": 0.7
           }
@@ -1146,7 +1186,7 @@
             "percent": 0.667
           },
           {
-            "label": "H",
+            "label": "R",
             "percent": 0.667,
             "angle": 180
           }
@@ -1352,7 +1392,7 @@
         ],
         "labels": [
           {
-            "label": "L",
+            "label": "B",
             "angle": 240,
             "percent": 0.6
           }
@@ -1395,7 +1435,7 @@
         ],
         "companies": [
           {
-            "label": "GCB 30",
+            "label": "GCB-30",
             "rotate": 30,
             "reverse": true,
             "left": 55,
@@ -1447,7 +1487,7 @@
         ],
         "labels": [
           {
-            "label": "B",
+            "label": "L",
             "angle": 60,
             "percent": 0.6
           }
@@ -1508,7 +1548,7 @@
         "color": "plain",
         "companies": [
           {
-            "label": "CFLV 30",
+            "label": "CFLV-30",
             "angle": 165,
             "left": 35,
             "percent": 0.8
@@ -1724,7 +1764,7 @@
         ],
         "companies": [
           {
-            "label": "CFL 30",
+            "label": "CFL-30",
             "angle": 195,
             "right": 35,
             "percent": 0.8
