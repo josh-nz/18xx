@@ -139,6 +139,10 @@
 
 /* Custom styles and overrides */
 
+.train__price {
+  color: rgb(17, 10, 12) !important;
+}
+
 .train__description {
   line-height: inherit;
   border-radius: 0;
@@ -148,7 +152,8 @@
 
 .train__notes {
   align-items: center;
-  padding-bottom: 0.17in;
+  //padding-bottom: 0.17in;
+  font-size: 0.7em;
 }
 
 .train__info {
