@@ -4,7 +4,9 @@ import brown from "./brown";
 import gray from "./gray";
 import variant from "./variant";
 
+import assoc from "ramda/src/assoc";
 import clone from "ramda/src/clone";
+import mapObjIndexed from "ramda/src/mapObjIndexed";
 import forEach from "ramda/src/forEach";
 import forEachObjIndexed from "ramda/src/forEachObjIndexed";
 
@@ -23,7 +25,7 @@ gatherAliases(brown);
 gatherAliases(gray);
 gatherAliases(variant);
 
-export default {
+let allTiles = {
   ...yellow,
   ...green,
   ...brown,
@@ -31,3 +33,5 @@ export default {
   ...variant,
   ...aliases
 };
+
+export default mapObjIndexed((tile, id) => assoc("id", id, tile), allTiles);
