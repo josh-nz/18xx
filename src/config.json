@@ -25,12 +25,12 @@
     "treasury": true,
     "value": false
   },
-  "companySvgLogos": "main",
+  "companySvgLogos": "none",
   "overrideCompanies": "none",
   "overrideSelection": [],
   "maps": {
     "players": true,
-    "roundTracker": true
+    "roundTracker": false
   },
   "plainMapCompanies": false,
   "straightCityNames": false,
