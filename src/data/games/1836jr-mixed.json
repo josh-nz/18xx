@@ -1,7 +1,7 @@
 {
   "info": {
-    "title": "1836jr-mixed",
-    "subtitle": "1830 variant with differences for 1856 variant",
+    "title": "1836jr",
+    "subtitle": "1830 & 1856 variants",
     "designer": "David Hecht",
     "background": "brown",
     "titleX": 50,
@@ -976,6 +976,15 @@
              "124-56": 1
   },
   "map": {
+    "players": {
+      "x": 40,
+      "y": 250
+    },
+    "roundTracker": {
+      "type": "row",
+      "x": 40,
+      "y": 400
+    },
     "hexes": [
       {
         "color": "gray",
