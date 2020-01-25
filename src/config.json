@@ -41,20 +41,20 @@
   },
   "charters": {
     "style": "color",
-    "cutlines": 25,
+    "cutlines": 10,
     "bleed": 12.5,
     "halfWidth": false,
-    "border": 0,
+    "border": 1,
     "blackBand": false
   },
   "cards": {
-    "shareStyle": "gmt",
-    "layout": "miniEuroDie",
+    "shareStyle": "left",
+    "layout": "free",
     "width": 265.748,
     "height":  173.228,
-    "cutlines": 25,
+    "cutlines": 10,
     "bleed": 12.5,
-    "border": 0,
+    "border": 1,
     "blackBand": false
   },
   "tokens": {
@@ -65,8 +65,8 @@
     "reverseMarketTokens": "all"
   },
   "trains": {
-    "style": "color",
-    "images": false
+    "style": "number",
+    "images": true
   },
   "tiles": {
     "layout": "individual",
