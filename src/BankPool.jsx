@@ -98,7 +98,7 @@ const BankPool = () => {
                           </g>
                         ), pool.notes)}
                       </Svg>
-                      <PageSetup landscape={true} />
+                      <PageSetup landscape={false} />
                     </div>
                   </div>
                 ), game.pools)}
