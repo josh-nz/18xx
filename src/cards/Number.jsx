@@ -15,6 +15,7 @@ const Number = ({ number, background }) => {
             <div className="card__bleed">
               <div className="card__body">
                 <div className="number__digit">{number}</div>
+                {number == 1 && (<div className="number__priority_deal">Priority deal</div>)}
               </div>
             </div>
           </div>

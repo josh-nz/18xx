@@ -16,3 +16,17 @@
   text-align: center;
   vertical-align: middle;
 }
+
+
+
+
+.number .card__body {
+  flex-direction: column;
+  writing-mode: vertical-rl;
+}
+
+.number__priority_deal {
+  color: white;
+  padding: 0.5em;
+  border-right: 1px solid;
+}
