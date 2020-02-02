@@ -1,6 +1,6 @@
 {
   "info": {
-    "title": "1836jr",
+    "title": "1836jr-56",
     "subtitle": "1856 Variant",
     "designer": "David Hecht",
     "background": "brown",
@@ -81,7 +81,7 @@
   },
   "companies": [
     {
-      "name": "Chemins de Fer de L'Etat Belge",
+      "name": "Chemins de Fer de L'État Belge",
       "abbrev": "B",
       "color": "black",
       "tokens": "four",
@@ -296,7 +296,7 @@
   ],
   "pools": [
     {
-      "name": "1836jr-1856 Bank Pool",
+      "name": "Bank Pool",
       "height": "5in",
       "notes": [
         {
