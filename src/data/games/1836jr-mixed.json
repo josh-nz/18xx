@@ -51,6 +51,17 @@
       40,
       100,
       100
+    ],
+    "three-cost": [
+      "Free (+ hex)",
+      40,
+      100
+    ],
+    "four-cost": [
+      "Free (+ hex)",
+      40,
+      100,
+      100
     ]
   },
   "shareTypes": {
@@ -70,7 +81,7 @@
   },
   "companies": [
     {
-      "name": "Chemins de Fer de L'Etat Belge",
+      "name": "Chemins de Fer de L'État Belge",
       "abbrev": "B",
       "color": "black",
       "tokens": "four",
@@ -80,7 +91,7 @@
       "name": "Grande Compagnie du Luxembourg",
       "abbrev": "GCL",
       "color": "green",
-      "tokens": "four",
+      "tokens": "four-cost",
       "variant": "1830"
     },
     {
@@ -94,7 +105,7 @@
       "name": "Noord-Brabantsch-Duitsche Spoorweg-Maatschappij",
       "abbrev": "NBDS",
       "color": "yellow",
-      "tokens": "three",
+      "tokens": "three-cost",
       "variant": "1830"
     },
     {
@@ -379,14 +390,15 @@
       "name": "2",
       "limit": "4",
       "number": "6",
-      "tiles": "yellow"
+      "tiles": "yellow",
+      "notes": "1 operating round, low off-board values"
     },
     {
       "name": "3",
       "limit": "4",
       "number": "5",
       "tiles": "green",
-      "notes": "Private companies may be purchased"
+      "notes": "2 operating rounds, private companies may be purchased"
     },
     {
       "name": "4",
@@ -400,7 +412,7 @@
       "limit": "2",
       "number": "3",
       "tiles": "brown",
-      "notes": "Private companies are closed"
+      "notes": "3 operating rounds, high off-board values, private companies are closed"
     },
     {
       "name": "6",
@@ -420,7 +432,7 @@
   ],
   "pools": [
     {
-      "name": "1836jr-1830 Bank Pool",
+      "name": "Bank Pool",
       "height": "5in",
       "notes": [
         {
