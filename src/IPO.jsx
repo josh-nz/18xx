@@ -27,7 +27,7 @@ const IPO = () => {
 
         return (
           <Color context="companies">
-            {c => (
+            {(c, t) => (
               <div className="ipo"
                    style={{
                      width: unitsToCss(config.paper.width),
@@ -46,6 +46,7 @@ const IPO = () => {
                              height: unitsToCss(config.cards.height),
                              backgroundColor: company.color ? c(company.color) : c("plain")
                            }}>
+                        <div className="ipo__sold_out" style={{ color: t(c(company.color)) }}>Sold Out</div>
                         <div className="ipo__token"
                              style={{
                                margin: `${unitsToCss((config.cards.height - 60) / 2)} auto`

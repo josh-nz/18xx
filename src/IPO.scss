@@ -38,3 +38,33 @@
   float: left;
   margin-right: 0.5in;
 }
+
+
+
+
+
+
+.ipo__sold_out {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.ipo__company {
+  position: relative;
+  margin-right: 0.4in;
+  margin-bottom: 0.4in;
+}
+
+.ipo__variant {
+  position: absolute;
+  bottom: 0.2em;
+  right: 0.7em;
+  font-size: 0.6em;
+  font-style: italic;
+}
+
+.ipo .ipo__token {
+  margin-top: 0.1in !important;
+}
+
+
