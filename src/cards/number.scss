@@ -20,13 +20,22 @@
 
 
 
-.number .card__body {
-  flex-direction: column;
-  writing-mode: vertical-rl;
-}
+
+
+/* New styles for new features */
 
 .number__priority_deal {
   color: white;
   padding: 0.5em;
   border-right: 1px solid;
 }
+
+
+
+
+/* Custom overrides */
+.number .card__body {
+  flex-direction: column;
+  writing-mode: vertical-rl;
+}
+

@@ -42,11 +42,10 @@
 
 
 
+/* New styles for new features */
 
-
-.ipo__sold_out {
-  text-align: center;
-  padding-top: 2em;
+.ipo .ipo__token {
+  margin-top: 0.1in !important;
 }
 
 .ipo__company {
@@ -54,6 +53,20 @@
   margin-right: 0.4in;
   margin-bottom: 0.4in;
 }
+
+.ipo__sold_out {
+  text-align: center;
+  padding-top: 2em;
+}
+
+
+
+/* Custom overrides */
+
+
+
+
+/* Not currently used styles */
 
 .ipo__variant {
   position: absolute;
@@ -63,8 +76,6 @@
   font-style: italic;
 }
 
-.ipo .ipo__token {
-  margin-top: 0.1in !important;
-}
+
 
 

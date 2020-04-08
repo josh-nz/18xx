@@ -192,41 +192,43 @@
 
 
 
+/* New styles for new features */
 
 
 
 
-/* Custom styles and overrides */
+/* Custom overrides */
+
+.train--number .train__name {
+  -webkit-text-stroke: 1px black;
+}
 
 .train__price {
   color: rgb(17, 10, 12) !important;
 }
 
 .train__description {
+  bottom: 0.33in;
   line-height: inherit;
-  border-radius: 0;
-  padding-top: 3.7em;
-  background-color: transparent;
+  //border-radius: 0;
+  //padding-top: 3.7em;
+  //background-color: transparent;
 }
 
 .train__notes {
   align-items: center;
   //padding-bottom: 0.17in;
   font-size: 0.7em;
-}
 
-.train__info {
-  border-radius: 0;
-}
-
-.train--number .train__name {
-  -webkit-text-stroke: 1px black;
+  & > .train__info {
+    border-radius: 0;
+  }
 }
 
 
 
 
-
+/* Not currently used styles */
 .train__rust {
 
   display: flex;
