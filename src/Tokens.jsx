@@ -11,10 +11,11 @@ import Config from "./data/Config";
 
 import { compileCompanies, overrideCompanies, unitsToCss } from "./util";
 
-import is from "ramda/src/is";
-import chain from "ramda/src/chain";
-import map from "ramda/src/map";
 import addIndex from "ramda/src/addIndex";
+import chain from "ramda/src/chain";
+import is from "ramda/src/is";
+import map from "ramda/src/map";
+import splitEvery from "ramda/src/splitEvery";
 
 import PageSetup from "./PageSetup";
 import Svg from "./Svg";
@@ -23,32 +24,20 @@ import Svg from "./Svg";
 //
 // Returns data that's needed to layout a token sheet.
 export const getTokenData = (game, tokens, paper) => {
-  let { marketTokenSize, stationTokenSize, bleed } = tokens;
+  let { marketTokenSize, stationTokenSize, generalTokenSize, bleed } = tokens;
 
   // Extra token counts from config
   let marketTokens = game.info.marketTokens || 3;
-  let reverseMarketTokens = marketTokens;
   let extraStationTokens = game.info.extraStationTokens || 0;
-
-  switch (tokens.reverseMarketTokens) {
-  case "none":
-    reverseMarketTokens = 0;
-    break;
-  case "one":
-    reverseMarketTokens = 1;
-    break;
-  default:
-    break;
-  }
 
   // Layout
   let layout = tokens.layout;
 
   // Width
-  let width = Math.max(marketTokenSize, stationTokenSize);
+  let width = Math.max(marketTokenSize, stationTokenSize, generalTokenSize);
 
   if (layout === "gsp") {
-    width = marketTokenSize = stationTokenSize = 50;
+    width = marketTokenSize = stationTokenSize = generalTokenSize = 50;
   }
 
   // Bleed
@@ -77,19 +66,20 @@ export const getTokenData = (game, tokens, paper) => {
   let extraX = (usableWidth - rowWidth) / 2;
   let extraY = (usableHeight - columnHeight) / 2;
 
-  let getX = i => extraX + ((i % perRow) * offsetX) + (0.5 * totalWidth);
-  let getY = i => extraY + (Math.floor(i / perRow) * offsetY) + (0.5 *  totalWidth);
+  let getX = i => extraX + (((i % perPage) % perRow) * offsetX) + (0.5 * totalWidth);
+  let getY = i => extraY + (Math.floor((i % perPage) / perRow) * offsetY) + (0.5 *  totalWidth);
 
   let perPage = perRow * perColumn;
 
   return {
+    tokens, // Config object
     marketTokens,
-    reverseMarketTokens,
     extraStationTokens,
     width,
     totalWidth,
     marketTokenSize,
     stationTokenSize,
+    generalTokenSize,
     bleed,
     bleedWidth,
     layout,
@@ -112,21 +102,48 @@ export const getTokenData = (game, tokens, paper) => {
 
 const TokenLayout = ({ companies, data, game }) => {
   let companyTokens = chain(company => {
+    let numberMarketTokens = data.marketTokens;
+    if (is(Number, company.marketTokens)) {
+      numberMarketTokens = company.marketTokens;
+    }
+
     // Market tokens
-    let marketTokens = Array(data.marketTokens).fill(
+    let marketTokens = Array(numberMarketTokens).fill(
       <CompanyToken company={company}
                     width={data.marketTokenSize / 2}
                     bleed={data.bleed} />
     );
 
-    let reverseMarketTokens = Array(data.reverseMarketTokens).fill(
+    let numberReverseMarketTokens = numberMarketTokens;
+    switch (data.tokens.reverseMarketTokens) {
+    case "none":
+      numberReverseMarketTokens = 0;
+      break;
+    case "one":
+      numberReverseMarketTokens = 1;
+      break;
+    default:
+      break;
+    }
+    if (numberMarketTokens === 0) {
+      numberReverseMarketTokens = 0;
+    }
+
+    let reverseMarketTokens = Array(numberReverseMarketTokens).fill(
       <CompanyToken company={company}
                     width={data.marketTokenSize / 2}
                     bleed={data.bleed}
                     inverse={true} />
     );
 
-    let stationTokens = Array(company.tokens.length + data.extraStationTokens).fill(
+    let numberExtraStationTokens = 0;
+    if (is(Number, company.extraStationTokens)) {
+      numberExtraStationTokens = company.extraStationTokens;
+    } else if (is(Number, data.extraStationTokens)) {
+      numberExtraStationTokens = data.extraStationTokens;
+    }
+
+    let stationTokens = Array(company.tokens.length + numberExtraStationTokens).fill(
       <CompanyToken company={company}
                     width={data.stationTokenSize / 2}
                     bleed={data.bleed} />
@@ -140,13 +157,13 @@ const TokenLayout = ({ companies, data, game }) => {
       return <Token bleed={true}
                outline="black"
                {...token}
-               width={data.stationTokenSize / 2} />
+               width={data.generalTokenSize / 2} />
     } else {
       return <Token bleed={true}
                outline="black"
                color="white"
                label={token}
-               width={data.stationTokenSize / 2} />
+               width={data.generalTokenSize / 2} />
     }
   }, game.tokens);
 
@@ -161,8 +178,11 @@ const TokenLayout = ({ companies, data, game }) => {
     </g>
   ), tokens);
 
-  return (
+  let pageNodes = splitEvery(data.perPage, nodes);
+
+  return addIndex(map)((nodes, i) => (
     <div
+      key={`tokens-page-${i}`}
       className="tokens"
       style={{ width: unitsToCss(data.usableWidth),
                height: unitsToCss(data.usableHeight) }}>
@@ -179,7 +199,7 @@ const TokenLayout = ({ companies, data, game }) => {
         />
       </ColorContext.Provider>
     </div>
-  );
+  ), pageNodes);
 };
 
 const Tokens = ({ override, selection }) => {

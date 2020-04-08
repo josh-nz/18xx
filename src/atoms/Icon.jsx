@@ -1,62 +1,22 @@
 import React from "react";
 import Color from "../data/Color";
+import icons from "../data/icons";
 
-const Value = ({ type }) => {
+const Icon = ({ type, color, width, fillColor, strokeColor, strokeWidth }) => {
   let icon;
+  let iconWidth = width || "25";
+  let iconPos = -1 * (width / 2) || "-12.5";
+  let circleR = width - 10 || "15";
+  let fill = fillColor || "white";
+  let stroke = strokeColor || "black";
+  let sWidth = strokeWidth || "2";
 
-  switch (type) {
-  case "medium-city":
-    icon = <use href="#medium-city" />
-    break;
-  case "home":
-    icon = <use href="#home" />
-    break;
-  case "charter":
-    icon = <use href="#charter" />
-    break;
-  case "tracks":
-    icon = <use href="#tracks" />
-    break;
-  case "boat":
-    icon = <use href="#boat" />
-    break;
-  case "mail":
-    icon = <use href="#mail" />
-    break;
-  case "share":
-    icon = <use href="#share" />
-    break;
-  case "bridge":
-    icon = <use href="#bridge" />
-    break;
-  case "tree":
-    icon = <use href="#tree" />
-    break;
-  case "mountain":
-    icon = <use href="#mountain" />
-    break;
-  case "water":
-    icon = <use href="#water" />
-    break;
-  case "river":
-    icon = <use href="#river" />
-    break;
-  case "cactus":
-    icon = <use href="#cactus" />
-    break;
-  case "swamp":
-    icon = <use href="#swamp" />
-    break;
-  case "meat":
-    icon = <use href="#meat" />;
-    break;
-  case "coal":
-    icon = <use href="#coal" />;
-    break;
-  case "port":
-  default:
-    icon = <use href="#port" />;
-    break;
+  if (icons[type]) {
+    let iconSvg = icons[type];
+    let Component = iconSvg.Component;
+    icon = <Component className={`icon-color-main-${color}`}
+                      width={iconWidth} height={iconWidth}
+                      x={iconPos} y={iconPos} />;
   }
 
   return (
@@ -64,12 +24,12 @@ const Value = ({ type }) => {
       {(c,t,s,p) => (
         <g>
           <circle
-            fill={p("white")}
-            stroke={p("black")}
-            strokeWidth="2"
+            fill={p(fill)}
+            stroke={p(stroke)}
+            strokeWidth={sWidth}
             cx="0"
             cy="0"
-            r="15"
+            r={circleR}
           />
           {icon}
         </g>
@@ -78,4 +38,4 @@ const Value = ({ type }) => {
   );
 };
 
-export default Value;
+export default Icon;
