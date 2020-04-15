@@ -312,7 +312,6 @@
   "pools": [
     {
       "name": "Bank Pool",
-      "height": "5in",
       "notes": [
         {
           "color": "orange",
